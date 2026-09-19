@@ -3,259 +3,111 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Howland Phase 1 Options</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>*{box-sizing:border-box}html,body{margin:0}img{max-width:100%}:root{color-scheme:light dark}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;0,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<title>Howland Website Refresh</title>
 <style>
   :root {
-    --paper: #f4f6f3;
-    --surface: #ffffff;
-    --surface-2: #eef1ec;
-    --ink: #1b2430;
-    --ink-soft: #56616d;
-    --ink-faint: #8a939d;
-    --line: #dde2dc;
-    --accent: #2f6b57;
-    --accent-ink: #235143;
-    --accent-soft: #e3ede8;
-    --good: #2f6b57;
-    --good-soft: #e3ede8;
+    --paper: #f5f6f3; --surface: #ffffff; --surface-2: #edf0ea;
+    --ink: #1c2632; --ink-soft: #55616d; --ink-faint: #8b949d; --line: #dee3dc;
+    --accent: #2f6b57; --accent-ink: #235143; --accent-soft: #e4efe9;
     --warn: #916212;
-    --warn-soft: #f3e9d2;
-    --over: #a2412f;
-    --over-soft: #f2ddd6;
-    --shadow: 0 1px 2px rgba(27,36,48,.06), 0 6px 20px rgba(27,36,48,.05);
-    --radius: 10px;
-    color-scheme: light dark;
+    --shadow: 0 1px 2px rgba(28,38,50,.05), 0 10px 30px rgba(28,38,50,.06);
+    --radius: 12px;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --paper: #13171b;
-      --surface: #1b2127;
-      --surface-2: #232b32;
-      --ink: #e7ebe5;
-      --ink-soft: #9ba5a2;
-      --ink-faint: #6d7876;
-      --line: #2c343b;
-      --accent: #63b295;
-      --accent-ink: #8fd2b8;
-      --accent-soft: #22332d;
-      --good: #63b295;
-      --good-soft: #22332d;
-      --warn: #d3a24e;
-      --warn-soft: #332b18;
-      --over: #db745f;
-      --over-soft: #37211c;
-      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.28);
+      --paper: #12161a; --surface: #1b2127; --surface-2: #232b31;
+      --ink: #e8ebe5; --ink-soft: #9ca6a2; --ink-faint: #6e7977; --line: #2c343b;
+      --accent: #66b598; --accent-ink: #8fd2b8; --accent-soft: #21332c; --warn: #d3a24e;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.3);
     }
   }
   :root[data-theme="dark"] {
-    --paper: #13171b;
-    --surface: #1b2127;
-    --surface-2: #232b32;
-    --ink: #e7ebe5;
-    --ink-soft: #9ba5a2;
-    --ink-faint: #6d7876;
-    --line: #2c343b;
-    --accent: #63b295;
-    --accent-ink: #8fd2b8;
-    --accent-soft: #22332d;
-    --good: #63b295;
-    --good-soft: #22332d;
-    --warn: #d3a24e;
-    --warn-soft: #332b18;
-    --over: #db745f;
-    --over-soft: #37211c;
-    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.28);
+    --paper: #12161a; --surface: #1b2127; --surface-2: #232b31;
+    --ink: #e8ebe5; --ink-soft: #9ca6a2; --ink-faint: #6e7977; --line: #2c343b;
+    --accent: #66b598; --accent-ink: #8fd2b8; --accent-soft: #21332c; --warn: #d3a24e;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.3);
   }
-
   * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-  }
-  img { max-width: 100%; }
-  [hidden] { display: none !important; }
-  .wrap {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding-inline: 22px;
-    padding-block: 40px 64px;
-  }
+  body { background: var(--paper); color: var(--ink); font-family: "IBM Plex Sans", system-ui, sans-serif; line-height: 1.58; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1000px; margin: 0 auto; padding-inline: 24px; padding-block: 48px 68px; }
   h1, h2, h3 { font-family: "Spectral", Georgia, serif; text-wrap: balance; margin: 0; }
   p { margin: 0; }
   em { font-style: italic; }
   .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
 
-  .eyebrow {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
-    color: var(--accent-ink); margin-bottom: 14px;
-  }
-  h1 { font-size: clamp(30px, 5vw, 44px); font-weight: 700; line-height: 1.08; letter-spacing: -.01em; }
-  .lede { margin-top: 16px; font-size: 17px; color: var(--ink-soft); max-width: 62ch; }
-  .constraint {
-    margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px 26px;
-    padding: 16px 18px; background: var(--surface); border: 1px solid var(--line);
-    border-radius: var(--radius); box-shadow: var(--shadow);
-  }
-  .constraint div { display: flex; flex-direction: column; gap: 2px; }
-  .constraint .k { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); }
-  .constraint .v { font-size: 15px; font-weight: 500; }
-  .constraint .v small { color: var(--ink-soft); font-weight: 400; }
+  .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent-ink); }
+  h1 { margin-top: 14px; font-size: clamp(30px, 5vw, 44px); font-weight: 700; line-height: 1.08; letter-spacing: -.01em; }
+  .lede { margin-top: 16px; font-size: 16.5px; color: var(--ink-soft); max-width: 64ch; }
 
-  .sec-head { margin: 52px 0 6px; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
-  .sec-head h2 { font-size: 24px; font-weight: 600; }
+  .sec-head { margin: 50px 0 6px; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .sec-head h2 { font-size: 23px; font-weight: 600; }
   .sec-head .note { font-size: 13px; color: var(--ink-faint); }
   .rule { height: 1px; background: var(--line); border: 0; margin: 12px 0 22px; }
 
-  .chart { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px 22px 14px; }
-  .brow { display: grid; grid-template-columns: 148px 1fr; gap: 14px; align-items: center; margin-bottom: 18px; }
-  .brow .bname { font-weight: 600; font-size: 14px; }
-  .brow .bname .bcost { display: block; font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
-  .track { position: relative; height: 30px; background: var(--surface-2); border-radius: 6px; overflow: hidden; }
-  .overzone { position: absolute; top: 0; bottom: 0; background: var(--over-soft); }
-  .ceiling { position: absolute; top: -6px; bottom: -6px; width: 2px; background: var(--over); z-index: 3; }
-  .bar { position: absolute; top: 5px; bottom: 5px; border-radius: 4px; z-index: 2; }
-  .bar.good { background: var(--accent); }
-  .bar.warn { background: linear-gradient(90deg, var(--accent) 60%, var(--warn)); }
-  .bar.over { background: linear-gradient(90deg, var(--accent) 20%, var(--over)); }
-  .scale { grid-column: 2; position: relative; height: 18px; margin-top: 2px; font-size: 11px; color: var(--ink-faint); }
-  .scale span { position: absolute; transform: translateX(-50%); }
-  .ceiling-label { position: absolute; transform: translateX(-50%); font-size: 11px; font-weight: 600; color: var(--over); white-space: nowrap; }
-
   .tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
-  table { border-collapse: collapse; width: 100%; min-width: 660px; background: var(--surface); }
-  th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 13.5px; }
-  thead th { background: var(--surface-2); }
+  table { border-collapse: collapse; width: 100%; min-width: 600px; background: var(--surface); }
+  th, td { text-align: left; padding: 13px 16px; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 13.5px; }
   tbody tr:last-child td { border-bottom: 0; }
-  th.opt { font-family: "Spectral", serif; font-size: 15px; font-weight: 600; }
-  th.opt small { display: block; font-family: "IBM Plex Sans", sans-serif; font-weight: 400; font-size: 11.5px; color: var(--ink-soft); margin-top: 3px; line-height: 1.35; }
-  td.rowlabel, th.rowlabel { font-weight: 600; color: var(--ink-soft); background: var(--surface-2); font-size: 12px; letter-spacing: .02em; white-space: nowrap; }
-  .cell { display: inline-flex; align-items: center; gap: 7px; }
+  thead th { background: var(--surface-2); vertical-align: bottom; }
+  th.opt { font-family: "Spectral", serif; font-size: 17px; font-weight: 600; }
+  th.opt small { display: block; font-family: "IBM Plex Sans", sans-serif; font-weight: 400; font-size: 11.5px; color: var(--ink-soft); margin-top: 4px; line-height: 1.35; }
+  td.rowlabel, th.rowlabel { font-weight: 600; color: var(--ink-soft); background: var(--surface-2); font-size: 12.5px; white-space: normal; width: 190px; }
+  .desc { display: block; font-weight: 400; color: var(--ink-faint); font-size: 11px; line-height: 1.35; margin-top: 4px; }
+  .priceRow td, .priceRow th { padding-top: 16px; padding-bottom: 16px; }
+  .priceRow td { font-family: "Spectral", serif; font-size: 21px; font-weight: 600; }
+  .priceRow td small { display: block; font-family: "IBM Plex Mono", monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); font-weight: 500; margin-bottom: 2px; }
+  .cell { display: inline-flex; align-items: flex-start; gap: 8px; }
+  .cell .dot { margin-top: 5px; }
+  .scope { display: flex; flex-direction: column; gap: 4px; }
+  .scope strong { font-size: 13px; font-weight: 600; }
+  .scope span { font-size: 12px; color: var(--ink-soft); line-height: 1.4; }
   .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
   .d-full { background: var(--accent); }
   .d-part { background: var(--warn); }
   .d-none { background: var(--ink-faint); opacity: .5; }
-  .pill { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; font-family: "IBM Plex Mono", monospace; }
-  .pill.fits { background: var(--good-soft); color: var(--accent-ink); }
-  .pill.tight { background: var(--warn-soft); color: var(--warn); }
-  .pill.over { background: var(--over-soft); color: var(--over); }
   .legend { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 14px; font-size: 12px; color: var(--ink-soft); }
   .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend .dot { width: 8px; height: 8px; }
 
-  .cards { display: flex; flex-direction: column; gap: 22px; }
+  .cards { display: flex; flex-direction: column; gap: 20px; }
   .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
-  .card-top { padding: 20px 22px 18px; border-bottom: 1px solid var(--line); display: flex; gap: 16px; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; }
-  .card-top .titleblock { flex: 1 1 260px; }
+  .card-top { padding: 20px 24px 18px; border-bottom: 1px solid var(--line); display: flex; gap: 16px; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
   .card-top h3 { font-size: 21px; font-weight: 600; }
-  .card-top .one { margin-top: 5px; font-size: 14.5px; color: var(--ink-soft); }
-  .costtag { text-align: right; flex: none; }
-  .costtag .big { font-family: "IBM Plex Mono", monospace; font-weight: 500; font-size: 17px; white-space: nowrap; }
-  .costtag .sub { font-size: 11.5px; color: var(--ink-faint); margin-top: 3px; }
-  .card-body { padding: 20px 22px 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 22px 28px; }
-  .inclist h4 { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 10px; font-family: "IBM Plex Sans", sans-serif; font-weight: 600; }
-  ul.ticks { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
-  ul.ticks li { position: relative; padding-left: 22px; font-size: 13.5px; color: var(--ink); }
-  ul.ticks li::before { position: absolute; left: 0; top: 0; font-weight: 600; }
-  ul.ticks.in li::before { content: "\2713"; color: var(--accent); }
-  ul.ticks.out li::before { content: "\2715"; color: var(--ink-faint); }
-  ul.ticks.out li { color: var(--ink-soft); }
-  .ramif { grid-column: 1 / -1; padding: 15px 17px; background: var(--surface-2); border-radius: 8px; border-left: 3px solid var(--accent); }
-  .ramif h4 { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-ink); margin: 0 0 6px; font-weight: 600; }
-  .ramif p { font-size: 13.5px; color: var(--ink); }
-  .ramif p + p { margin-top: 8px; }
-  .budget-line { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; padding-top: 4px; font-size: 13px; color: var(--ink-soft); }
-  .budget-line .mono { color: var(--ink); }
-  .budget-line .arrow { color: var(--ink-faint); }
+  .card-top .one { margin-top: 4px; font-size: 14px; color: var(--ink-soft); }
+  .card-top .price { font-family: "Spectral", serif; font-size: 24px; font-weight: 600; white-space: nowrap; }
+  .card-top .price small { font-family: "IBM Plex Sans", sans-serif; font-size: 14px; font-weight: 400; color: var(--ink-soft); }
+  .card-body { padding: 20px 24px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 22px 30px; }
+  .blk h4 { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 11px; font-weight: 600; }
+  ul.pts { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  ul.pts li { position: relative; padding-left: 21px; font-size: 13.5px; }
+  ul.pts.inc li::before { content: "\2713"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  ul.pts.later li { color: var(--ink-soft); }
+  ul.pts.later li::before { content: "\2192"; position: absolute; left: 0; color: var(--ink-faint); font-weight: 700; }
 
-  footer { margin-top: 46px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 13px; color: var(--ink-soft); }
-  footer p + p { margin-top: 9px; }
-  footer strong { color: var(--ink); font-weight: 600; }
-  .stamp { margin-top: 18px; font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .04em; color: var(--ink-faint); text-transform: uppercase; }
+  footer { margin-top: 40px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--ink-faint); }
+  footer .disclosure { color: var(--ink-soft); margin: 0 0 8px; }
+  footer .foot-row { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
-  @media (max-width: 620px) {
-    .brow { grid-template-columns: 1fr; gap: 6px; }
-    .scale { grid-column: 1; }
+  @media (max-width: 720px) {
     .card-body { grid-template-columns: 1fr; }
     .card-top { flex-direction: column; }
-    .costtag { text-align: left; }
   }
-  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 </style>
 </head>
 <body>
 <div class="wrap">
 
   <header>
-    <div class="eyebrow">Howland &amp; Associates &middot; Web Redesign &middot; Phase 1</div>
-    <h1>Four ways to scope Phase&nbsp;1</h1>
-    <p class="lede">Same fixed budget, four different bets on <em>how much</em> of the site gets redesigned and <em>who</em> builds it. Every option removes the hero/header videos site-wide &mdash; the core fix for the load and mobile-viewport problems. A working aid for our conversation, not a client proposal.</p>
-
-    <div class="constraint">
-      <div><span class="k">Fixed price</span><span class="v mono">$10,000</span></div>
-      <div><span class="k">PM (Amber), off the top</span><span class="v mono">$1,000&ndash;$1,500</span></div>
-      <div><span class="k">Left for delivery</span><span class="v mono">~$8,500&ndash;$9,000 <small>&middot; ~57&ndash;60 hrs @ $150</small></span></div>
-    </div>
+    <div class="eyebrow">Howland &amp; Associates · Website Refresh · Phase&nbsp;1</div>
+    <h1>Phase 1 packages</h1>
+    <p class="lede">Three ways to scope the Phase 1 refresh, side by side — what each package includes and what moves to a later stage. All three fully redesign the homepage, rework the site's navigation, and bring the brand expression in line with WCAG accessibility guidelines.</p>
   </header>
 
   <div class="sec-head">
-    <h2>Where each lands on budget</h2>
-    <span class="note">Fully-loaded range (delivery + PM) against the $10k line</span>
-  </div>
-  <hr class="rule">
-  <div class="chart">
-    <div class="brow">
-      <div class="bname">Comprehensive<span class="bcost mono">$10,450 &ndash; $13,950</span></div>
-      <div class="track">
-        <div class="overzone" style="left:66.67%; right:0;"></div>
-        <div class="ceiling" style="left:66.67%;"></div>
-        <div class="bar over" style="left:69.7%; right:7%;"></div>
-      </div>
-    </div>
-    <div class="brow">
-      <div class="bname">Lean Core<span class="bcost mono">$9,550 &ndash; $12,750</span></div>
-      <div class="track">
-        <div class="overzone" style="left:66.67%; right:0;"></div>
-        <div class="ceiling" style="left:66.67%;"></div>
-        <div class="bar warn" style="left:63.7%; right:15%;"></div>
-      </div>
-    </div>
-    <div class="brow">
-      <div class="bname">Homepage-Only<span class="bcost mono">$7,900 &ndash; $10,800</span></div>
-      <div class="track">
-        <div class="overzone" style="left:66.67%; right:0;"></div>
-        <div class="ceiling" style="left:66.67%;"></div>
-        <div class="bar good" style="left:52.7%; right:28%;"></div>
-      </div>
-    </div>
-    <div class="brow">
-      <div class="bname">Design-Only<span class="bcost mono">$8,050 &ndash; $10,500</span></div>
-      <div class="track">
-        <div class="overzone" style="left:66.67%; right:0;"></div>
-        <div class="ceiling" style="left:66.67%;"></div>
-        <div class="bar good" style="left:53.7%; right:30%;"></div>
-      </div>
-    </div>
-    <div class="brow" aria-hidden="true">
-      <div class="bname"></div>
-      <div class="scale">
-        <span style="left:0%;">$0</span>
-        <span style="left:33.3%;">$5k</span>
-        <span class="ceiling-label" style="left:66.67%;">$10k ceiling</span>
-        <span style="left:100%;">$15k</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="sec-head">
-    <h2>What each includes at a glance</h2>
+    <h2>At a glance</h2>
+    <span class="note">Shared rows (marked across all three) are the common foundation</span>
   </div>
   <hr class="rule">
   <div class="tablewrap">
@@ -263,249 +115,229 @@
       <thead>
         <tr>
           <th class="rowlabel"></th>
-          <th class="opt">Comprehensive<small>The full vision, designed &amp; built</small></th>
-          <th class="opt">Lean Core<small>Homepage + blog + shared system</small></th>
-          <th class="opt">Homepage-Only<small>One great page + tech fixed everywhere</small></th>
-          <th class="opt">Design-Only<small>Design it all now, build later</small></th>
+          <th class="opt">The Essentials<small>Homepage + site-wide clean-up</small></th>
+          <th class="opt">Core Pages<small>Adds a new hero + CTA to the supporting pages</small></th>
+          <th class="opt">Comprehensive<small>Broadest scope, plus the blog</small></th>
         </tr>
       </thead>
       <tbody>
+        <tr class="priceRow">
+          <td class="rowlabel">Investment</td>
+          <td>$10,800</td>
+          <td>$12,000</td>
+          <td>$19,000</td>
+        </tr>
         <tr>
-          <td class="rowlabel">Fits $10k?</td>
-          <td><span class="pill over">Over</span></td>
-          <td><span class="pill tight">Tight</span></td>
-          <td><span class="pill fits">Fits</span></td>
-          <td><span class="pill fits">Fits</span></td>
+          <td class="rowlabel">Discovery &amp; brief<small class="desc">Divi feasibility audit + brand &amp; behavior messaging workshop + design brief</small></td>
+          <td><span class="cell"><span class="dot d-part"></span>Divi feasibility audit only</span></td>
+          <td><span class="cell"><span class="dot d-full"></span>Full</span></td>
+          <td><span class="cell"><span class="dot d-full"></span>Full</span></td>
         </tr>
         <tr>
           <td class="rowlabel">Homepage redesign</td>
           <td><span class="cell"><span class="dot d-full"></span>Full</span></td>
           <td><span class="cell"><span class="dot d-full"></span>Full</span></td>
           <td><span class="cell"><span class="dot d-full"></span>Full</span></td>
-          <td><span class="cell"><span class="dot d-part"></span>Designed only</span></td>
         </tr>
         <tr>
-          <td class="rowlabel">Shared system (nav, footer, type)</td>
+          <td class="rowlabel">Navigation &amp; site UX<small class="desc">Hamburger removed, full desktop nav, every page surfaced, persistent CTA, redesigned footer</small></td>
           <td><span class="cell"><span class="dot d-full"></span>Full</span></td>
           <td><span class="cell"><span class="dot d-full"></span>Full</span></td>
           <td><span class="cell"><span class="dot d-full"></span>Full</span></td>
-          <td><span class="cell"><span class="dot d-part"></span>Designed only</span></td>
         </tr>
         <tr>
-          <td class="rowlabel">Blog reading / sharing rebuild</td>
-          <td><span class="cell"><span class="dot d-full"></span>Full</span></td>
-          <td><span class="cell"><span class="dot d-full"></span>Full</span></td>
-          <td><span class="cell"><span class="dot d-none"></span>Not this phase</span></td>
-          <td><span class="cell"><span class="dot d-part"></span>Designed only</span></td>
+          <td class="rowlabel">Brand &amp; visual system<small class="desc">New typography &amp; color with WCAG accessibility (contrast) built in — applied consistently site-wide</small></td>
+          <td><div class="scope">
+            <strong>Universal adjustments only</strong>
+            <span>Not targeted to specific pages or elements, excluding homepage</span>
+          </div></td>
+          <td><div class="scope">
+            <strong>Universal adjustments +</strong>
+            <span>specific tweaks to About &amp; Portfolios if glaringly needed</span>
+          </div></td>
+          <td><div class="scope">
+            <strong>Universal adjustments +</strong>
+            <span>specific mods to sub-pages, per new design requirements</span>
+          </div></td>
         </tr>
         <tr>
-          <td class="rowlabel">About &amp; Portfolios</td>
-          <td><span class="cell"><span class="dot d-full"></span>Redesigned</span></td>
-          <td><span class="cell"><span class="dot d-part"></span>Tech fix only</span></td>
-          <td><span class="cell"><span class="dot d-part"></span>Tech fix only</span></td>
-          <td><span class="cell"><span class="dot d-part"></span>Designed only</span></td>
+          <td class="rowlabel">Image &amp; video assets</td>
+          <td colspan="3"><span style="color:var(--ink-soft)">Images and video assets will be either AI-generated, provided by the client, or recommended by design and purchased by the client as a separate cost.</span></td>
+        </tr>
+        <tr>
+          <td class="rowlabel">Speed &amp; mobile fix</td>
+          <td><span class="cell"><span class="dot d-full"></span>Fallback image (excl. homepage)</span></td>
+          <td><span class="cell"><span class="dot d-full"></span>New hero</span></td>
+          <td><span class="cell"><span class="dot d-full"></span>New hero</span></td>
+        </tr>
+        <tr>
+          <td class="rowlabel">Supporting pages</td>
+          <td><div class="scope">
+            <strong>No additional pages individually designed</strong>
+            <span>Video headers get a fallback image, excluding homepage</span>
+          </div></td>
+          <td><div class="scope">
+            <strong>Light touch — About &amp; Portfolios</strong>
+            <span>Video removed; new above-the-fold hero + CTA</span>
+            <span>Inherits the site-wide CSS updates</span>
+          </div></td>
+          <td><div class="scope">
+            <strong>Fuller refinement — About &amp; Portfolios</strong>
+            <span>Video removed; new hero + CTA</span>
+            <span>Refinements to other sections, guided by brand &amp; conversion goals</span>
+            <span>Short of a full page rebuild</span>
+          </div></td>
+        </tr>
+        <tr>
+          <td class="rowlabel">Blog (reading layout &amp; sharing)</td>
+          <td><span class="cell"><span class="dot d-none"></span>Later stage</span></td>
+          <td><span class="cell"><span class="dot d-none"></span>Later stage</span></td>
+          <td><div class="scope">
+            <strong>Refreshed &amp; shareable</strong>
+            <span>Reading layout &amp; sharing only — excludes content strategy &amp; research</span>
+          </div></td>
         </tr>
         <tr>
           <td class="rowlabel">Contact form</td>
+          <td><span class="cell"><span class="dot d-part"></span>Restyled</span></td>
+          <td><span class="cell"><span class="dot d-part"></span>Restyled</span></td>
           <td><span class="cell"><span class="dot d-full"></span>Rebuilt</span></td>
-          <td><span class="cell"><span class="dot d-full"></span>Reskinned</span></td>
-          <td><span class="cell"><span class="dot d-full"></span>Reskinned</span></td>
-          <td><span class="cell"><span class="dot d-part"></span>Designed only</span></td>
         </tr>
         <tr>
-          <td class="rowlabel">Video/viewport fix (site-wide)</td>
+          <td class="rowlabel">Goes live this phase</td>
           <td><span class="cell"><span class="dot d-full"></span>Yes</span></td>
           <td><span class="cell"><span class="dot d-full"></span>Yes</span></td>
           <td><span class="cell"><span class="dot d-full"></span>Yes</span></td>
-          <td><span class="cell"><span class="dot d-none"></span>Designed, not built</span></td>
         </tr>
         <tr>
-          <td class="rowlabel">Goes live this phase?</td>
-          <td><span class="cell"><span class="dot d-full"></span>Yes</span></td>
-          <td><span class="cell"><span class="dot d-full"></span>Yes</span></td>
-          <td><span class="cell"><span class="dot d-full"></span>Yes</span></td>
-          <td><span class="cell"><span class="dot d-none"></span>No</span></td>
+          <td class="rowlabel">Analytics, SEO, GEO, advertising &amp; conversion tracking or improvements</td>
+          <td><span class="cell"><span class="dot d-none"></span>Not included, later stage</span></td>
+          <td><span class="cell"><span class="dot d-none"></span>Not included, later stage</span></td>
+          <td><span class="cell"><span class="dot d-none"></span>Not included, later stage</span></td>
         </tr>
         <tr>
-          <td class="rowlabel">Conversion tracking</td>
-          <td><span class="cell"><span class="dot d-none"></span>Deferred</span></td>
-          <td><span class="cell"><span class="dot d-none"></span>Deferred</span></td>
-          <td><span class="cell"><span class="dot d-none"></span>Deferred</span></td>
-          <td><span class="cell"><span class="dot d-none"></span>Deferred</span></td>
+          <td class="rowlabel">Closing-pitch CTA links on About + every blog post</td>
+          <td><span class="cell"><span class="dot d-none"></span>Not included, later stage</span></td>
+          <td><span class="cell"><span class="dot d-none"></span>Not included, later stage</span></td>
+          <td><span class="cell"><span class="dot d-none"></span>Not included, later stage</span></td>
         </tr>
       </tbody>
     </table>
   </div>
   <div class="legend">
-    <span><span class="dot d-full"></span> Full / included</span>
-    <span><span class="dot d-part"></span> Partial &mdash; reduced or design-only</span>
-    <span><span class="dot d-none"></span> Not in this phase</span>
+    <span><span class="dot d-full"></span> Included in full</span>
+    <span><span class="dot d-part"></span> Partial — restyle / new hero</span>
+    <span><span class="dot d-none"></span> A later stage</span>
   </div>
 
   <div class="sec-head">
-    <h2>The four directions in detail</h2>
+    <h2>What each package includes</h2>
+    <span class="note">Each package builds on the one before it — shared foundation, plus what sets it apart (in bold)</span>
   </div>
   <hr class="rule">
   <div class="cards">
 
     <article class="card">
       <div class="card-top">
-        <div class="titleblock">
+        <div>
+          <h3>The Essentials</h3>
+          <p class="one">The foundation — a redesigned homepage and the fixes that carry across the whole site.</p>
+        </div>
+        <div class="price">$10,800</div>
+      </div>
+      <div class="card-body">
+        <div class="blk">
+          <h4>Included</h4>
+          <ul class="pts inc">
+            <li>Discovery — Divi feasibility audit only</li>
+            <li>Full homepage redesign</li>
+            <li>Site-wide navigation overhaul — hamburger removed, full desktop nav, every page surfaced, persistent CTA, redesigned footer</li>
+            <li>New brand &amp; visual system — typography, color, and WCAG accessibility, applied site-wide</li>
+            <li>Site speed &amp; mobile display fixed site-wide</li>
+            <li>Contact form restyled to the new look</li>
+            <li>Supporting pages carry the new look — video headers get a fallback image; no additional pages individually designed</li>
+          </ul>
+        </div>
+        <div class="blk">
+          <h4>Moves to a later stage</h4>
+          <ul class="pts later">
+            <li>Individually designed hero + CTA on About &amp; Portfolios</li>
+            <li>Full content redesign of the About &amp; Portfolios bodies</li>
+            <li>A fully rebuilt, native contact form</li>
+            <li>A refreshed, shareable blog</li>
+            <li>Analytics, SEO, GEO, advertising &amp; conversion tracking</li>
+            <li>Closing-pitch CTA links on About &amp; every blog post</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-top">
+        <div>
+          <h3>Core Pages</h3>
+          <p class="one">The foundation, plus a fresh entry and call to action on the pages prospects use to vet you.</p>
+        </div>
+        <div class="price">$12,000</div>
+      </div>
+      <div class="card-body">
+        <div class="blk">
+          <h4>Included</h4>
+          <ul class="pts inc">
+            <li><strong>About &amp; Portfolios gain a new above-the-fold hero and call-to-action</strong> — a light-touch upgrade beyond the fallback image</li>
+            <li>Those pages carry the new site-wide look; bodies not individually redesigned</li>
+            <li>Discovery &amp; brief — Divi feasibility audit, brand &amp; behavior messaging workshop, and design brief</li>
+            <li>Full homepage redesign</li>
+            <li>Site-wide navigation overhaul — hamburger removed, full desktop nav, every page surfaced, persistent CTA, redesigned footer</li>
+            <li>New brand &amp; visual system — typography, color, and WCAG accessibility, applied site-wide</li>
+            <li>Site speed &amp; mobile display fixed site-wide</li>
+            <li>Contact form restyled to the new look</li>
+          </ul>
+        </div>
+        <div class="blk">
+          <h4>Moves to a later stage</h4>
+          <ul class="pts later">
+            <li>Full content redesign of the About &amp; Portfolios bodies</li>
+            <li>A fully rebuilt, native contact form</li>
+            <li>A refreshed, shareable blog</li>
+            <li>Analytics, SEO, GEO, advertising &amp; conversion tracking</li>
+            <li>Closing-pitch CTA links on About &amp; every blog post</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-top">
+        <div>
           <h3>Comprehensive</h3>
-          <p class="one">The complete plan &mdash; every page designed and built, homepage sets the system the rest inherits.</p>
+          <p class="one">The broadest package — every page addressed, plus the blog.</p>
         </div>
-        <div class="costtag">
-          <div class="big">$10,450&ndash;$13,950</div>
-          <div class="sub">fully loaded &middot; $450&ndash;$3,950 over</div>
-        </div>
+        <div class="price">$19,000</div>
       </div>
       <div class="card-body">
-        <div class="inclist">
+        <div class="blk">
           <h4>Included</h4>
-          <ul class="ticks in">
-            <li>Divi feasibility audit + conversion &amp; design brief</li>
-            <li>Full homepage redesign + shared system (nav, footer, type, CTAs)</li>
-            <li>About &amp; Portfolios redesigned <em>and</em> rebuilt</li>
-            <li>Full blog reading / sharing rebuild</li>
-            <li>On-brand contact form + site-wide video removal</li>
+          <ul class="pts inc">
+            <li><strong>About &amp; Portfolios get a new above-the-fold hero + CTA</strong></li>
+            <li><strong>Plus refinements to other sections</strong> — guided by brand &amp; conversion goals, short of a full page rebuild</li>
+            <li><strong>A refreshed, shareable blog</strong> — reading layout &amp; sharing (excludes content strategy &amp; research)</li>
+            <li><strong>Contact form fully rebuilt</strong> — on-brand, replacing the off-brand embed</li>
+            <li>Discovery &amp; brief — Divi feasibility audit, brand &amp; behavior messaging workshop, and design brief</li>
+            <li>Full homepage redesign</li>
+            <li>Site-wide navigation overhaul — hamburger removed, full desktop nav, every page surfaced, persistent CTA, redesigned footer</li>
+            <li>New brand &amp; visual system — typography, color, and WCAG accessibility, applied site-wide</li>
+            <li>Site speed &amp; mobile display fixed site-wide</li>
           </ul>
         </div>
-        <div class="inclist">
-          <h4>Not included</h4>
-          <ul class="ticks out">
-            <li>Fee schedule / FAQ redesign</li>
-            <li>Conversion tracking (deferred &mdash; we'd add it back before launch)</li>
-            <li>Analytics-platform cleanup (separate change order)</li>
-            <li>SEO &amp; ad tuning (a later phase)</li>
+        <div class="blk">
+          <h4>Moves to a later stage</h4>
+          <ul class="pts later">
+            <li>Full page rebuild of the supporting pages (beyond the refinements included)</li>
+            <li>Blog content strategy, research &amp; ongoing content program</li>
+            <li>Analytics, SEO, GEO, advertising &amp; conversion tracking</li>
+            <li>Closing-pitch CTA links on About &amp; every blog post</li>
           </ul>
-        </div>
-        <div class="ramif">
-          <h4>Ramifications</h4>
-          <p>Delivers the most against Rob's original brief &mdash; but lands over $10k once PM is counted, by $450 at best and up to ~$3,950 if the audit surfaces surprises. Choosing this means either a scope-for-price conversation or accepting a higher number.</p>
-        </div>
-        <div class="budget-line">
-          <span>Delivery <span class="mono">$9,450&ndash;$12,450</span></span><span class="arrow">+</span><span>PM <span class="mono">$1,000&ndash;$1,500</span></span><span class="arrow">=</span><span><strong class="mono">$10,450&ndash;$13,950</strong></span>
-        </div>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-top">
-        <div class="titleblock">
-          <h3>Lean Core</h3>
-          <p class="one">Spend where traffic and value are &mdash; homepage + blog + shared system; other pages stabilized, not polished.</p>
-        </div>
-        <div class="costtag">
-          <div class="big">$9,550&ndash;$12,750</div>
-          <div class="sub">fully loaded &middot; $450 under &rarr; $2,750 over</div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="inclist">
-          <h4>Included</h4>
-          <ul class="ticks in">
-            <li>Divi audit + conversion &amp; design brief</li>
-            <li>Full homepage + shared system</li>
-            <li>Full blog rebuild, with a booking CTA built into the post template</li>
-            <li>Site-wide video removal + static fallback images on About/Portfolios</li>
-            <li>Contact-form reskin to the new look</li>
-          </ul>
-        </div>
-        <div class="inclist">
-          <h4>Not included</h4>
-          <ul class="ticks out">
-            <li>Full redesign of About / Portfolios (bodies left as-is)</li>
-            <li>Page-by-page closing CTAs beyond the blog</li>
-            <li>Fee / FAQ redesign</li>
-            <li>Conversion tracking</li>
-          </ul>
-        </div>
-        <div class="ramif">
-          <h4>Ramifications</h4>
-          <p>Fits at the low end, over at the high end. Keeps the blog &mdash; a commitment from the 9/8 meeting &mdash; and fixes the tech everywhere. The trade: About &amp; Portfolios keep their current body layout under a cleaner header, so they'll read as lighter-touch next to the homepage.</p>
-        </div>
-        <div class="budget-line">
-          <span>Delivery <span class="mono">$8,550&ndash;$11,250</span></span><span class="arrow">+</span><span>PM <span class="mono">$1,000&ndash;$1,500</span></span><span class="arrow">=</span><span><strong class="mono">$9,550&ndash;$12,750</strong></span>
-        </div>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-top">
-        <div class="titleblock">
-          <h3>Homepage-Only</h3>
-          <p class="one">Make one page excellent, fix the tech across the whole site, establish the system &mdash; then expand.</p>
-        </div>
-        <div class="costtag">
-          <div class="big">$7,900&ndash;$10,800</div>
-          <div class="sub">fully loaded &middot; $2,100 under &rarr; $800 over</div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="inclist">
-          <h4>Included</h4>
-          <ul class="ticks in">
-            <li>Divi audit + conversion &amp; design brief</li>
-            <li>Full homepage + shared system (appears site-wide)</li>
-            <li>Site-wide video removal + fallback images</li>
-            <li>Contact-form reskin</li>
-          </ul>
-        </div>
-        <div class="inclist">
-          <h4>Not included</h4>
-          <ul class="ticks out">
-            <li>Blog rebuild (deferred to a next stage)</li>
-            <li>About / Portfolios redesign (video fix only)</li>
-            <li>Page-level closing CTAs</li>
-            <li>Fee / FAQ; conversion tracking</li>
-          </ul>
-        </div>
-        <div class="ramif">
-          <h4>Ramifications</h4>
-          <p>The only direction that fits $10k with real margin. But it's a front-door facelift, not a full redesign &mdash; a prospect who clicks past the homepage still meets the old site &mdash; and it sets aside the blog goal from the 9/8 meeting.</p>
-          <p>Best positioned to Rob as <strong>stage one of a staged rollout</strong>: the design system makes the blog and other pages cheaper fast-follows, and the ~$2k of low-end margin could fund the blog back first.</p>
-        </div>
-        <div class="budget-line">
-          <span>Delivery <span class="mono">$6,900&ndash;$9,300</span></span><span class="arrow">+</span><span>PM <span class="mono">$1,000&ndash;$1,500</span></span><span class="arrow">=</span><span><strong class="mono">$7,900&ndash;$10,800</strong></span>
-        </div>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-top">
-        <div class="titleblock">
-          <h3>Design-Only</h3>
-          <p class="one">Design the entire site to the full vision; hand implementation to WebSalt or a separate build project.</p>
-        </div>
-        <div class="costtag">
-          <div class="big">$8,050&ndash;$10,500</div>
-          <div class="sub">fully loaded &middot; $1,950 under &rarr; $500 over</div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="inclist">
-          <h4>Included</h4>
-          <ul class="ticks in">
-            <li>Discovery + Divi feasibility check</li>
-            <li>Full design for every page &mdash; home, about, portfolios, blog, contact, fee/FAQ</li>
-            <li>Design&rarr;build handoff package: annotated comps, style tokens, assets</li>
-          </ul>
-        </div>
-        <div class="inclist">
-          <h4>Not included</h4>
-          <ul class="ticks out">
-            <li>All implementation (&rarr; WebSalt or a secondary project)</li>
-            <li>Nothing goes live this phase</li>
-            <li>The tech problems aren't fixed until someone builds</li>
-          </ul>
-        </div>
-        <div class="ramif">
-          <h4>Ramifications</h4>
-          <p>Delivers the complete design vision within budget, and it's the most cost-certain option &mdash; no build unknowns on our side. But nothing improves on the live site in Phase 1, and it routes the build to WebSalt, the vendor we deliberately planned to work around (or implies a ~$15k two-project total if built in-house later).</p>
-          <p>Strong as a <strong>definition step</strong>: once the whole site is designed, the build can be quoted precisely.</p>
-        </div>
-        <div class="budget-line">
-          <span>Delivery <span class="mono">$7,050&ndash;$9,000</span></span><span class="arrow">+</span><span>PM <span class="mono">$1,000&ndash;$1,500</span></span><span class="arrow">=</span><span><strong class="mono">$8,050&ndash;$10,500</strong></span>
         </div>
       </div>
     </article>
@@ -513,10 +345,12 @@
   </div>
 
   <footer>
-    <p><strong>How to read the ranges.</strong> All figures are fully loaded (delivery @ $150/hr + Amber's PM). Ranges are wide where a short Phase 1 Divi audit hasn't yet resolved two unknowns: whether the contact form is a locked third-party embed, and how cluttered the About/Portfolios page bodies are. The audit narrows both before any number is locked.</p>
-    <p><strong>What every option shares.</strong> The hero/header videos come off site-wide &mdash; that's the root fix for the load and mobile-viewport problems &mdash; and the homepage always establishes the type, contrast, and layout system the rest of the site inherits.</p>
-    <p><strong>The real fork.</strong> Homepage-Only and Design-Only both fit the budget from opposite directions &mdash; build one page well, or design everything and build later. Comprehensive and Lean Core deliver more of the site but lean on the top of the budget or past it.</p>
-    <p class="stamp">Internal working aid &middot; figures from the 10K rescope ledger v1.9 &middot; 2026-09-16</p>
+    <p class="disclosure">Our design &amp; build strategy includes AI-assisted copy unless otherwise stated.</p>
+    <p class="disclosure">Ongoing maintenance, hosting, and any third-party tool costs are the responsibility of WebSalt or the client.</p>
+    <div class="foot-row">
+      <span>Howland &amp; Associates · Website Refresh, Phase 1</span>
+      <span>2026</span>
+    </div>
   </footer>
 
 </div>
